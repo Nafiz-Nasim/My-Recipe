@@ -2,6 +2,7 @@ const search = document.getElementById('search');
 const submit = document.getElementById('submit');
 const randomRecipeContainer = document.getElementById('randomRecipe');
 const randomRecipetext= document.getElementById('rendomapirecipes');
+const displayall= document.getElementById('displayall');
 
 // Function to fetch random recipes
 const randomrecipes = async () => {
@@ -59,17 +60,7 @@ const displayRecipe = (recipe) => {
 // On window load, fetch random recipe
 window.onload = randomrecipes;
 
-// Search API function
-const searchAPI = async (searchValue) => {
-    try {
-        const response = await fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${searchValue}`);
-        const data = await response.json();
-        console.log(data);
-displayALLdata(data);
-    } catch (error) {
-        console.error("Error fetching recipe:", error);
-    }
-};
+
 
 // Submit button event listener
 submit.addEventListener('click', (event) => {
@@ -95,8 +86,3 @@ const unblock = () => {
     randomRecipeContainer.style.display = 'block';  // Makes the div visible again
     randomRecipetext.style.display = 'block';  // Makes the div visible again
 };
- 
-
-const displayALLdata=(data)=>{
- 
-}
