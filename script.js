@@ -86,3 +86,33 @@ const unblock = () => {
     randomRecipeContainer.style.display = 'block';  // Makes the div visible again
     randomRecipetext.style.display = 'block';  // Makes the div visible again
 };
+ // Search API function
+const searchAPI = async (searchValue) => {
+    try {
+        const response = await fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${searchValue}`);
+        const data = await response.json();
+        console.log(data);
+displayALLdata(data);
+    } catch (error) {
+        console.error("Error fetching recipe:", error);
+    }
+};
+
+const displayALLdata=(data)=>{
+    displayall.innerHTML=` `;
+ data.meals.forEach(element => {
+    displayall.innerHTML+=`
+    <div class="m-10 flex    max-w-xs max-h-48 overflow-hidden ">
+    <img src="${element.strMealThumb}" class=" w-full h-full object-cover">
+    
+    </div>
+   
+     
+    
+    
+    `
+    
+});
+
+    
+}
