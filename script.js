@@ -64,9 +64,36 @@ const displayRecipe = (recipe) => {
 
 
 window.onload = randomrecipes;
+// search api
+const searchAPI=async()=>{
+    try {
+         const response = await fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s= ${searchValue}`);
+        const data = await response.json();
+        
+    } catch (error) {
+         console.error("Error fetching recipe:", error);
+    }
 
+}
 
 submit.addEventListener('click', (event) => {
     event.preventDefault();
-  
+    if(search.value){   const searchValue=search.value.trim();
+  searchAPI(searchValue);
+  block();}
+ else `<div><p> enter something....</p> </div>`
+
 });
+
+
+
+const block = () => {
+  const randomRecipeContainer = document.getElementById('rendomapirecipes');
+  randomRecipeContainer.style.display = 'none'; // Hides the div
+};
+
+const unblock = () => {
+  const randomRecipeContainer = document.getElementById('rendomapirecipes');
+  randomRecipeContainer.style.display = 'block'; // Makes the div visible again
+};
+
