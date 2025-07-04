@@ -104,7 +104,7 @@ const displayALLdata = (data) => {
 
     data.meals.forEach(element => {
         displayall.innerHTML += `
-        <div class="m-5 p-5 bg-white border rounded-lg hover:shadow-lg hover:shadow-2xl">
+        <div class="m-5  bg-white   rounded-lg  hover:shadow-2xl transform hover:translate-y-[-10px] transition-all duration-300">
             <div class="flex justify-center mb-4">
                 <img src="${element.strMealThumb}" class="w-full h-48 object-cover rounded-lg" alt="${element.strMeal}">
             </div>
@@ -113,7 +113,7 @@ const displayALLdata = (data) => {
                 <p class="text-sm text-gray-500 mt-2">${element.strCategory}</p>
                 <p class="text-xs text-gray-400 mt-1">${element.strArea}</p>
                 <!-- 'See More' Button -->
-                <button class="mt-4 bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600">
+                <button class="m-4 bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600">
     <a href="src/recipe.html?id=${element.idMeal}" class="text-white">See More</a>
 </button>
 
