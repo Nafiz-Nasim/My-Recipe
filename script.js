@@ -62,31 +62,31 @@ window.onload = randomrecipes;
 
 
 
-// Submit button event listener
+
 submit.addEventListener('click', (event) => {
     event.preventDefault();
     if (search.value) {   
-        const searchValue = search.value.trim();  // Declare searchValue here
+        const searchValue = search.value.trim();  
         searchAPI(searchValue);
-        block();  // Hide the random recipe section
+        block(); 
     } else {
-        randomRecipeContainer.innerHTML = "<div><p>Enter something....</p></div>";  // Show message when input is empty
+        randomRecipeContainer.innerHTML = "<div><p>Enter something....</p></div>"; 
     }
 });
 
-// Function to block the visibility of the random recipe container
+
 const block = () => {
     randomRecipeContainer.style.display = 'none';
  randomRecipetext.style.display='none';
-      // Hides the div
+     
 };
 
-// Function to unblock and make the recipe container visible again
+
 const unblock = () => {
-    randomRecipeContainer.style.display = 'block';  // Makes the div visible again
-    randomRecipetext.style.display = 'block';  // Makes the div visible again
+    randomRecipeContainer.style.display = 'block';  
+    randomRecipetext.style.display = 'block';  
 };
- // Search API function
+
 const searchAPI = async (searchValue) => {
     try {
         const response = await fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${searchValue}`);
@@ -98,21 +98,30 @@ displayALLdata(data);
     }
 };
 
-const displayALLdata=(data)=>{
-    displayall.innerHTML=` `;
- data.meals.forEach(element => {
-    displayall.innerHTML+=`
-    <div class="m-10 flex    max-w-xs max-h-48 overflow-hidden ">
-    <img src="${element.strMealThumb}" class=" w-full h-full object-cover">
-    
-    </div>
-   
-     
-    
-    
-    `
-    
-});
+const displayALLdata = (data) => {
+    const displayall = document.getElementById("displayall");
+    displayall.innerHTML = "";  // Clear any existing content
 
-    
+    data.meals.forEach(element => {
+        displayall.innerHTML += `
+        <div class="m-5 p-5 bg-white border rounded-lg hover:shadow-lg hover:shadow-2xl">
+            <div class="flex justify-center mb-4">
+                <img src="${element.strMealThumb}" class="w-full h-48 object-cover rounded-lg" alt="${element.strMeal}">
+            </div>
+            <div class="text-center">
+                <h3 class="text-lg font-semibold text-gray-800">${element.strMeal}</h3>
+                <p class="text-sm text-gray-500 mt-2">${element.strCategory}</p>
+                <p class="text-xs text-gray-400 mt-1">${element.strArea}</p>
+                <!-- 'See More' Button -->
+                <button class="mt-4 bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600">
+    <a href="src/recipe.html?id=${element.idMeal}" class="text-white">See More</a>
+</button>
+
+            </div>
+        </div>
+        `;
+    });
 }
+
+
+
