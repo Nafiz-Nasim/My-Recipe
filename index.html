@@ -8,12 +8,13 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>My Recipe</title>
 </head>
-<body>
-<nav class="bg-sky-600">
+<body class="bg-[#F5EFFF] overflow-x-hidden">
+<nav class="bg-[#A594F9]">
   <div class="flex justify-between py-5 mx-10 text-gray-200">
     <div class="left">
       <i class="fa-solid fa-bowl-food text-3xl"> My Recipe </i>
     </div>
+
     <div class="favorite">
       <i class="fa-solid fa-bookmark text-2xl"></i>
     </div>
@@ -21,12 +22,13 @@
 </nav>
 
 <!-- Search box -->
-<div class="searchbox flex items-center mt-10 justify-center">
+     <div class="searchbox flex items-center  mt-10 justify-center">
   <form action="">
-    <input type="text" placeholder="Enter the recipe name" id="search" class=" px-5 sm:px-10 py-2 border-blue-500 border-2">
-    <button id="submit" class="ml-10 bg-blue-400 px-3 sm:px-5 sm:py-2 py-1 rounded-4xl">Search</button>
+    <input type="text" placeholder="Enter the recipe name" id="search" class=" px-5 sm:px-10 py-2 border-[#A594F9] rounded-3xl text-black border-2 bg-white">
+    <button id="submit" class="ml-10 bg-[#A594F9] border-white shadow-black  text-black  px-3 sm:px-5 sm:py-2 py-1 rounded-4xl">Search</button>
   </form>
 </div>
+
 <div class="searchcall">
   <div class="alldata grid grid-cols-1 sm:grid-rows-2 md:grid-cols-3 lg:grid-cols-4 gap-4" id="displayall">
     
@@ -36,14 +38,31 @@
 
 <!-- Random Recipe Section -->
  <div class=" rendomapirecipes">
-   <div class="sm:mx-40 mx-10 text-2xl sm:text-5xl mt-10 font-bold"  id="rendomapirecipes"> <h2 >Today's best recipe</h2></div>
-<div class="randomrecipes flex justify-center items-center mt-10 ">
+   <div class="sm:mx-32 mx-10 text-2xl sm:text-5xl mt-10 font-bold"  id="rendomapirecipes"> <h2 >Trending Now</h2></div>
+<div class="randomrecipes flex justify-center items-center mt-10  ">
 
-  <div class="recipe-card max-w-sm rounded overflow-hidden shadow-lg  p-6 sm:flex sm:flex-row sm:max-w-none sm:items-center" id="randomRecipe">
+  <div class="recipe-card bg-white max-w-sm rounded overflow-hidden shadow-lg  p-6 sm:flex sm:flex-row sm:max-w-none  sm:items-center mx-1 sm:mx-30" id="randomRecipe">
     <!-- Random recipe will be inserted here -->
   </div>
 </div>
  </div>
+ <!-- Category -->
+  <h2 class="mx-5 my-10 sm:mx-32 text-3xl font-bold">Category</h2>
+  <div class="mx-5 sm:mx-32 overflow-hidden my-10 flex flex-wrap justify-center sm:justify-around gap-4">
+    <button value="Vegetarian" class="bg-[#CDC1FF] rounded-2xl px-4 py-2 text-black font-medium">Vegetarian</button>
+    <button value="Seafood" class="bg-[#CDC1FF] rounded-2xl px-4 py-2 text-black font-medium">Seafood</button>
+    <button value="Breakfast" class="bg-[#CDC1FF] rounded-2xl px-4 py-2 text-black font-medium">Breakfast</button>
+    <button value="Miscellaneous" class="bg-[#CDC1FF] rounded-2xl px-4 py-2 text-black font-medium">Miscellaneous</button>
+    <button value="Cocktail" class="bg-[#CDC1FF] rounded-2xl px-4 py-2 text-black font-medium">Cocktail</button>
+    <button value="Stew" class="bg-[#CDC1FF] rounded-2xl px-4 py-2 text-black font-medium">Stew</button>
+    <button value="Soup" class="bg-[#CDC1FF] rounded-2xl px-4 py-2 text-black font-medium">Soup</button>
+    <button value="Salad" class="bg-[#CDC1FF] rounded-2xl px-4 py-2 text-black font-medium">Salad</button>
+</div>
+<!-- display the category of the vegetarian  -->
+<div>
+
+
+</div>
 
 
 

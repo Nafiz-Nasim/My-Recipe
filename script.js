@@ -100,11 +100,11 @@ displayALLdata(data);
 
 const displayALLdata = (data) => {
     const displayall = document.getElementById("displayall");
-    displayall.innerHTML = "";  // Clear any existing content
+    displayall.innerHTML = ""; 
 
     data.meals.forEach(element => {
         displayall.innerHTML += `
-        <div class="m-5  bg-white   rounded-lg  hover:shadow-2xl transform hover:translate-y-[-10px] transition-all duration-300">
+        <div class="m-5  bg-[#E5D9F2]   rounded-lg  hover:shadow-2xl transform hover:translate-y-[-10px] transition-all duration-300">
             <div class="flex justify-center mb-4">
                 <img src="${element.strMealThumb}" class="w-full h-48 object-cover rounded-lg" alt="${element.strMeal}">
             </div>
