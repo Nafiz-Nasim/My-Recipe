@@ -108,10 +108,20 @@ const displayALLdata = (data) => {
             <div class="flex justify-center mb-4">
                 <img src="${element.strMealThumb}" class="w-full h-48 object-cover rounded-lg" alt="${element.strMeal}">
             </div>
-            <div class="text-center">
-                <h3 class="text-lg font-semibold text-gray-800">${element.strMeal}</h3>
-                <p class="text-sm text-gray-500 mt-2">${element.strCategory}</p>
-                <p class="text-xs text-gray-400 mt-1">${element.strArea}</p>
+            <div class="flex flex-col items-center justify-center">
+                <h3 class="text-xl font-semibold text-gray-800">${element.strMeal}</h3>
+
+                <div class=" flex flex-row items-center justify-center gap-2 m-2 text-center">
+                <i class="fa-solid fa-utensils"></i>
+                <p class="text-sm text-gray-900 mt-2">${element.strCategory}</p>
+                </div>
+                
+                
+ 
+<div class="location flex gap-2 items-center justify-center"><i class="fa-solid fa-location-dot"> </i><p class="text-sm text-gray-900 text-center mt-1">${element.strArea}</p></div>
+
+
+               
                 <!-- 'See More' Button -->
                 <button class="m-4 bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600">
     <a href="src/recipe.html?id=${element.idMeal}" class="text-white">See More</a>
